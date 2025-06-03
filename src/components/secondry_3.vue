@@ -118,46 +118,57 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .partners-section {
+    padding: 40px 20px;
+  }
+
+  .partners-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
   .partners-logos {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0;
+    gap: 30px;
   }
+
   .logo-row {
-    width: 100%;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    gap: 0;
+    gap: 30px;
   }
+
   .partner-logo {
-    flex: 1 1 25%;
-    max-width: 25%;
-    min-width: 60px;
-    margin-bottom: 18px;
-    margin-right: 0;
+    max-width: 120px;
   }
 }
 
 @media (max-width: 375px) {
-  .container {
-    padding: 15px;
+  .partners-section {
+    padding: 30px 15px;
   }
 
-  h2 {
-    font-size: 20px;
+  .partners-header {
+    font-size: 0.8rem;
+    margin-bottom: 15px;
   }
 
-  p {
-    font-size: 14px;
+  .partners-title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    line-height: 1.3;
   }
 
-  .button {
-    padding: 8px 16px;
-    font-size: 14px;
+  .partners-logos {
+    gap: 20px;
   }
 
-  .image-container img {
-    max-width: 100%;
+  .logo-row {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .partner-logo {
+    max-width: 100px;
+    margin: 10px;
   }
 }
 </style>
