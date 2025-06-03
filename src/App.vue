@@ -1,24 +1,25 @@
 <template>
   <div id="app">
-    <div class="header-bg">
-      <webHeader />
-      <HeaderContent />
+    <router-view v-if="!isAuthenticated"></router-view>
+    <div v-else>
+      <div class="header-bg">
+        <webHeader />
+        <HeaderContent />
+      </div>
+      <Main_a />
+      <Main_b />
+      <Main_c />
+      <secondry_1 />
+      <secondry_2 />
+      <secondry_3 />
+      <secondry_4 />
+      <secondry_5 />
+      <FooterComponent />
     </div>
-    <Main_a />
-    <Main_b />
-    <Main_c />
-    <secondry_1 />
-    <secondry_2 />
-    <secondry_3 />
-    <secondry_4 />
-    <secondry_5 />
-    <FooterComponent />
-    <HelloWorld />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 import webHeader from "./components/webHeader.vue";
 import HeaderContent from "./components/HeaderContent.vue";
 import Main_a from "./components/Main_a.vue";
@@ -30,10 +31,10 @@ import secondry_3 from "./components/secondry_3.vue";
 import secondry_4 from "./components/secondry_4.vue";
 import secondry_5 from "./components/secondry_5.vue";
 import FooterComponent from "./components/FooterComponent.vue";
+
 export default {
   name: "App",
   components: {
-    HelloWorld,
     webHeader,
     HeaderContent,
     Main_a,
@@ -45,6 +46,27 @@ export default {
     secondry_4,
     secondry_5,
     FooterComponent,
+  },
+  data() {
+    return {
+      isAuthenticated: false,
+    };
+  },
+  created() {
+    // Check authentication status when component is created
+    this.isAuthenticated = !!localStorage.getItem("isAuthenticated");
+
+    // Listen for authentication changes
+    window.addEventListener("storage", this.checkAuth);
+  },
+  beforeUnmount() {
+    // Clean up event listener
+    window.removeEventListener("storage", this.checkAuth);
+  },
+  methods: {
+    checkAuth() {
+      this.isAuthenticated = !!localStorage.getItem("isAuthenticated");
+    },
   },
 };
 </script>
