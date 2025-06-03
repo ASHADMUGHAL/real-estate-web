@@ -7,7 +7,7 @@
       <nav class="nav-links">
         <a href="#">How it works</a>
         <a href="#about-us">About us</a>
-        <a href="#login">Login</a>
+        <a href="#" @click.prevent="handleLogout">Logout</a>
       </nav>
     </div>
   </div>
@@ -20,6 +20,14 @@ export default {
     return {
       headerImage: require("../../images/logo.png"),
     };
+  },
+  methods: {
+    handleLogout() {
+      // Clear authentication state
+      localStorage.removeItem("isAuthenticated");
+      // Redirect to login page
+      this.$router.push("/login");
+    },
   },
 };
 </script>
