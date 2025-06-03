@@ -238,4 +238,32 @@ export default {
     align-items: center;
   }
 }
+
+@media (max-width: 375px) {
+  .footer-container {
+    padding: 20px 15px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-section {
+    width: 100%;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    font-size: 14px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
 </style>

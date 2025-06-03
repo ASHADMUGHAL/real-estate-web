@@ -10,7 +10,7 @@
       </h1>
       <p class="testimonial-description">
         We have worked with leading fabricators and GCs to complete our projects
-        on time and with the highest quality. RaaP’s platform extends this
+        on time and with the highest quality. RaaP's platform extends this
         capability to the entire prefabrication construction process to drive
         greater savings in time and money.
       </p>
@@ -134,5 +134,28 @@ export default {
 .testimonial-image img:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease;
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .image-container img {
+    max-width: 100%;
+  }
 }
 </style>

@@ -66,4 +66,26 @@ export default {
 .nav-links a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 375px) {
+  .header {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .mobile-menu {
+    width: 100%;
+  }
+}
 </style>

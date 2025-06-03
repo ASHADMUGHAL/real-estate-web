@@ -67,7 +67,6 @@ export default {
 .main-container {
   min-height: 100vh;
   width: 100%;
-
   background: linear-gradient(
     2100deg,
     rgba(13, 28, 64, 0.9),
@@ -87,30 +86,31 @@ export default {
 }
 
 .hero-content {
-  padding-top: 120px;
+  padding-top: 80px;
   text-align: center;
   position: relative;
   z-index: 2;
 }
 
 .main-heading {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
   line-height: 1.2;
 }
 
 .subheading {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   max-width: 700px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem;
   line-height: 1.6;
+  padding: 0 15px;
 }
 
 .cta-button-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .cta-button {
@@ -137,29 +137,29 @@ export default {
 
 .stats-image-container {
   display: flex;
-  align-items: flex-end;
-  margin-top: 50px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
   position: relative;
-  margin-left: -50px;
+  margin-left: 0;
 }
 
 .header-image {
-  width: 250px;
+  width: 100%;
+  max-width: 300px;
   height: auto;
-  border-radius: 10px 0 0 10px;
-  position: absolute;
-  margin-left: -150px;
+  border-radius: 10px;
+  position: relative;
+  margin-left: 0;
 }
 
 .stats-banner {
   background-color: #1e3a6a;
-  border-radius: 0 10px 0px 0;
-
+  border-radius: 10px;
   overflow: hidden;
+  width: 100%;
   max-width: 350px;
-
-  flex-grow: 1;
-  margin-top: 96px;
+  margin-top: 20px;
 }
 
 .stats-banner-header {
@@ -168,7 +168,7 @@ export default {
   font-weight: 500;
   color: white;
   text-align: center;
-  margin-left: 20px;
+  margin-left: 0;
 }
 
 .stats-content {
@@ -177,7 +177,8 @@ export default {
   display: flex;
   padding: 20px;
   gap: 40px;
-  margin-left: 87px;
+  justify-content: center;
+  margin-left: 0;
 }
 
 .stat-item {
@@ -185,7 +186,7 @@ export default {
 }
 
 .stat-number {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
@@ -195,31 +196,29 @@ export default {
 }
 
 .explore-card {
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
-  /* background-color: #1e3a6a; */
-  background-color: linear-gradient(280deg, rgba(30, 58, 106, 0.8));
+  position: relative;
+  bottom: auto;
+  right: auto;
+  margin: 30px auto;
+  background-color: rgba(30, 58, 106, 0.8);
   padding: 15px;
   border-radius: 10px;
-  width: 200px;
-  /* height: 60px; */
+  width: 90%;
+  max-width: 300px;
   display: flex;
   border: 0.1px solid white;
   align-items: center;
-
   gap: 10px;
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
-
   gap: 10px;
 }
 
 .card-text {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.7;
   color: rgb(194, 194, 194);
 }
@@ -238,54 +237,86 @@ export default {
   background-color: white;
   border-radius: 50%;
 }
+
 .header-image:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+  .hero-content {
+    padding-top: 120px;
+  }
+
   .main-heading {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 
-  .stats-content {
-    gap: 40px;
-
-    flex-direction: column;
+  .subheading {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
   }
 
-  .header-image {
-    max-width: 150px;
-  }
-
-  .explore-card {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    margin: 30px auto;
-  }
-  .explore-card {
-    max-width: 100%;
-    padding: 10px;
-  }
-
-  .header-image {
-    display: none;
-  }
-}
-@media (max-width: 768px) {
   .stats-image-container {
+    flex-direction: row;
+    align-items: flex-end;
+    margin-top: 50px;
+    margin-left: -50px;
+  }
+
+  .header-image {
+    width: 250px;
+    border-radius: 10px 0 0 10px;
+    position: absolute;
+    margin-left: -150px;
+  }
+
+  .stats-banner {
+    border-radius: 0 10px 0px 0;
+    margin-top: 96px;
+  }
+
+  .stats-banner-header {
     margin-left: 20px;
   }
-  .stats-banner-header {
-    margin-left: 0;
+
+  .stats-content {
+    margin-left: 87px;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+  }
+
+  .explore-card {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 200px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .main-heading {
+    font-size: 2rem;
+  }
+
+  .subheading {
     font-size: 1rem;
-    padding: 10px 15px;
+    padding: 0 10px;
+  }
+
+  .cta-button {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+
+  .stats-banner {
+    margin-top: 15px;
   }
 
   .stats-content {
-    flex-direction: column;
-    margin-left: 0;
     padding: 15px;
     gap: 20px;
   }
@@ -297,10 +328,14 @@ export default {
   .stat-label {
     font-size: 0.9rem;
   }
-  .stats-banner {
-    margin-top: 0;
-    margin-left: 158px;
-    max-width: 50%;
+
+  .explore-card {
+    width: 95%;
+    padding: 12px;
+  }
+
+  .card-text {
+    font-size: 0.8rem;
   }
 }
 </style>

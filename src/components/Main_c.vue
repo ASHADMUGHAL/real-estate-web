@@ -115,4 +115,33 @@ p {
     width: 100%;
   }
 }
+
+@media (max-width: 375px) {
+  .standardized-design-container {
+    padding: 20px 15px;
+  }
+
+  .content-wrapper {
+    border: white solid 10px;
+  }
+
+  .text-container {
+    padding: 20px 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin: 0 0 12px 0;
+  }
+
+  p {
+    font-size: 13px;
+    margin: 0 0 20px 0;
+  }
+
+  .cta-button {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
 </style>

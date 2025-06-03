@@ -233,4 +233,27 @@ export default {
     font-size: 20px;
   }
 }
+
+@media (max-width: 375px) {
+  .container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .image-container img {
+    max-width: 100%;
+  }
+}
 </style>

@@ -34,11 +34,9 @@ export default {
 <style scoped>
 .standardized-design-container {
   font-family: "Arial", sans-serif;
-  padding: 80px;
+  padding: 40px 20px;
   background-color: #f9f9f9;
   display: flex;
-  padding-bottom: 30px;
-
   justify-content: center;
 }
 
@@ -47,12 +45,13 @@ export default {
   width: 100%;
   display: flex;
   background-color: white;
-  border: white solid 25px;
+  border: white solid 15px;
   box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.05);
+  flex-direction: column;
 }
 
 .image-container {
-  width: 65%;
+  width: 100%;
 }
 
 .image-container img {
@@ -63,16 +62,16 @@ export default {
 }
 
 .text-container {
-  width: 35%;
-  padding: 40px 30px;
+  width: 100%;
+  padding: 30px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 h2 {
-  font-size: 24px;
-  margin: 0 0 20px 0;
+  font-size: 22px;
+  margin: 0 0 15px 0;
   color: #000;
   font-weight: 600;
 }
@@ -81,7 +80,7 @@ p {
   font-size: 14px;
   line-height: 1.5;
   color: #555;
-  margin: 0 0 30px 0;
+  margin: 0 0 25px 0;
 }
 
 .cta-button {
@@ -101,18 +100,67 @@ p {
 .arrow-icon {
   margin-left: 8px;
 }
+
 .image-container:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease;
 }
-@media (max-width: 768px) {
-  .content-wrapper {
-    flex-direction: column;
+
+@media (min-width: 768px) {
+  .standardized-design-container {
+    padding: 80px;
   }
 
-  .image-container,
+  .content-wrapper {
+    flex-direction: row;
+    border: white solid 25px;
+  }
+
+  .image-container {
+    width: 65%;
+  }
+
   .text-container {
-    width: 100%;
+    width: 35%;
+    padding: 40px 30px;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+  }
+
+  p {
+    margin: 0 0 30px 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .standardized-design-container {
+    padding: 20px 15px;
+  }
+
+  .content-wrapper {
+    border: white solid 10px;
+  }
+
+  .text-container {
+    padding: 20px 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin: 0 0 12px 0;
+  }
+
+  p {
+    font-size: 13px;
+    margin: 0 0 20px 0;
+  }
+
+  .cta-button {
+    padding: 8px 16px;
+    font-size: 13px;
   }
 }
 </style>
