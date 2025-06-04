@@ -2,12 +2,12 @@
   <div class="web-header-root">
     <div class="main-header">
       <div class="logo">
-        <img :src="headerImage" alt="Header Logo" />
+        <img src="/logo.png" alt="Real Estate Logo" />
       </div>
       <nav class="nav-links">
         <a href="#">How it works</a>
         <a href="#about-us">About us</a>
-        <a href="#" @click.prevent="handleLogout">Logout</a>
+        <a href="#">Logout</a>
       </nav>
     </div>
   </div>
@@ -20,14 +20,6 @@ export default {
     return {
       headerImage: require("../../images/logo.png"),
     };
-  },
-  methods: {
-    handleLogout() {
-      // Clear authentication state
-      localStorage.removeItem("isAuthenticated");
-      // Redirect to login page
-      this.$router.push("/login");
-    },
   },
 };
 </script>
@@ -57,6 +49,7 @@ export default {
 
 .logo img {
   height: 80px;
+  object-fit: contain;
 }
 
 .nav-links {

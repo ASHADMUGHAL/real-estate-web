@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <router-view v-if="!isAuthenticated"></router-view>
-    <div v-else>
+    <div class="home">
       <div class="header-bg">
         <webHeader />
         <HeaderContent />
@@ -47,31 +46,17 @@ export default {
     secondry_5,
     FooterComponent,
   },
-  data() {
-    return {
-      isAuthenticated: false,
-    };
-  },
-  created() {
-    // Check authentication status when component is created
-    this.isAuthenticated = !!localStorage.getItem("isAuthenticated");
-
-    // Listen for authentication changes
-    window.addEventListener("storage", this.checkAuth);
-  },
-  beforeUnmount() {
-    // Clean up event listener
-    window.removeEventListener("storage", this.checkAuth);
-  },
-  methods: {
-    checkAuth() {
-      this.isAuthenticated = !!localStorage.getItem("isAuthenticated");
-    },
-  },
 };
 </script>
 
 <style>
+#app {
+  font-family: Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
 .header-bg {
   width: 100%;
   min-height: 100vh;
